@@ -10,9 +10,6 @@ C Program to perform delimiter matching using a stack
 
 #include "delimiter.h"
 
-/*
-Input: single character 
-*/
 int mapFunction(char c) {
     if (c == '(' || c == '[' || c == '{') {
         return 1;

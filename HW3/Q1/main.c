@@ -23,12 +23,14 @@ int main(){
 
     printf("ECE 341 HW 2 Q1: Delimiter Matching \nWilliam Neel \n");
 
+    // test cases
     char test1[32] = "a*{[((b+c)-d)+ g-ft] - a}"; 
     char test2[34] = "a*{[((b+c)-d)+ g-pi) - a]}";
     char test3[40] = "a*{[((b+c)-d)+ g-ft] - (abc*r)}";
     char test4[41] = "a*{[((b+c)-d)+ g-pi] - (abc*r)]}";
     char test5[41] = "w*{[((a+c)-d)+ g-alpha] - pi*r)}";
     
+    // run tests
     printf("Test 1 %s \n", test1);
     delimiterMatch(test1, 32);
     printf("Test 2 %s \n", test2);
