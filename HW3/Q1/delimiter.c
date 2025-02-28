@@ -34,10 +34,15 @@ int delimiterMatch(char *str, int length){
                 push(&s, str[i]);
                 break;
             case -1:
-                pop(&s);
-                break;
-            case 0:
-                break;
+                if (isEmpty(&s)){ // if the stack is empty, the delimiters are not matched
+                    printf("Expected %c but got %c \n", top(&s), str[i]);
+                    printf("Delimiters are not matched \n");
+                    return 0;
+                }
+                else{ // if the stack is not empty, check if the popped delimiter is the corresponding opening delimiter
+                    pop(&s);
+                    break;
+                }
             default:
                 break;
         }
@@ -49,8 +54,8 @@ int delimiterMatch(char *str, int length){
         return 1;
     }
 
-    // control only reaches here if the stack is not empty
-    printf("Delimiters are not matched \n");
+    // control should never reach here
+    printf("Error during processing\n");
     return 0;
 }              
 

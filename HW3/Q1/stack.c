@@ -6,11 +6,11 @@ reference: https://www.geeksforgeeks.org/implement-stack-in-c/
 #include "stack.h"
 
 void initStack(Stack *s){
-    s->top = -1;
+    s->top = empty; // set the top index to -1
 }
 
 bool isEmpty(Stack *s){
-    return s->top == -1; // if the top index is -1, the stack is empty
+    return s->top == empty; // if the top index is -1, the stack is empty
 }
 
 bool isFull(Stack *s){
@@ -20,14 +20,14 @@ bool isFull(Stack *s){
 void push(Stack *s, char in){
 
     if(isFull(s)){
-        throwExecption(s, 1);
+        throwExecption(s, full);
     }
     s->arr[++s->top] = in; // increment the top index and add the input to the stack
 }
 
 char pop(Stack *s){
     if(isEmpty(s)){
-        throwExecption(s, -1);
+        throwExecption(s, empty);
     }
     char temp = s->arr[s->top]; // store top elemnt in temp before destroying it
     s->top--; // decrement the top index
@@ -36,7 +36,7 @@ char pop(Stack *s){
 
 char top(Stack *s){
     if(isEmpty(s)){
-        throwExecption(s, -1);
+        throwExecption(s, empty);
     }
     return s->arr[s->top]; // returns the top element 
 }
@@ -44,10 +44,10 @@ char top(Stack *s){
 void throwExecption(Stack *s, char err){
 
     switch(err){
-        case 1: // stack full
+        case full: // stack full
             printf("Stack at %p is full \n", s);
             break;
-        case -1: // stack empty
+        case empty: // stack empty
             printf("Stack at %p is empty \n", s);
             break;
         default: // unknown error

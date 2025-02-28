@@ -1,8 +1,5 @@
-// driver code to test delimiter matching
+/* driver code to test delimiter matching
 
-#include "delimiter.h"
-
-/*
 
 Your program should read a string of text of arbitrary length, and check if the left
 and right delimiters match correctly. If the delimiters match, it should print a message
@@ -19,15 +16,18 @@ e. w*{[((a+c)-d)+ g-alpha] – pi*r)}
 
 */
 
+#include "delimiter.h"
+
+
 int main(){
 
-    printf("ECE 341 HW 2 Q1: Delimiter Matching \n William Neel \n");
+    printf("ECE 341 HW 2 Q1: Delimiter Matching \nWilliam Neel \n");
 
     char test1[32] = "a*{[((b+c)-d)+ g-ft] - a}"; 
     char test2[34] = "a*{[((b+c)-d)+ g-pi) - a]}";
-    char test3[40] = "a*{[((b+c)-d)+ g-ft] – (abc*r)}";
-    char test4[41] = "a*{[((b+c)-d)+ g-pi] – (abc*r)]}";
-    char test5[41] = "w*{[((a+c)-d)+ g-alpha] – pi*r)}";
+    char test3[40] = "a*{[((b+c)-d)+ g-ft] - (abc*r)}";
+    char test4[41] = "a*{[((b+c)-d)+ g-pi] - (abc*r)]}";
+    char test5[41] = "w*{[((a+c)-d)+ g-alpha] - pi*r)}";
     
     printf("Test 1 %s \n", test1);
     delimiterMatch(test1, 32);

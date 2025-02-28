@@ -6,6 +6,8 @@ Header file for the stack data structure
 #include <stdbool.h>
 
 #define MAX 1024
+#define empty -1
+#define full 1
 
 /* 
 stack data structure 
